@@ -9,7 +9,13 @@ router.get('/', function(req, res, next) {
 
 /* GET ads page. */
 router.get('/ads', function (req, res, next) {
-    res.render('index', { title: 'Classified Ad ' });
+    res.render('', { title: 'Classified Ad ' });
 });
+
+/* GET register page. */
+router.get('/register', function (req, res, next) {
+    res.render('register', { title: 'Classified Ad ' });
+});
+
 
 module.exports = router;

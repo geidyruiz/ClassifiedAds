@@ -1,7 +1,7 @@
 <!--Geidy Ducuara Ruiz - 200419082-->
-<h2 class="font-weight-bold" align="center">Classified Ads</h2>
+<h2 style="color: #6b30c2" class="font-weight-bold" align="center">Classified Ads</h2>
 <!--<h2>{{message1}}</h2>-->
-<a href="/products/add" style="color:black;">Add a new Ad</a>
+<a style="color:deeppink" class="font-weight-bold"href="/products/add">Add a new Ad</a>
 <p></p>
 <div class="table-responsive">
     <table class="table table-info table-hover">
@@ -23,7 +23,7 @@
         <td>{{this.usedProduct}}</td>
         <td>
             <a style="color:blue;" href="/products/edit/{{this._id}}">Edit | </a>
-            <a href="/tasks/delete/{{ this._id }}" class="text-danger delete"> Delete </a>
+            <a href="/products/delete/{{ this._id }}" class="text-danger delete" id="delete"> Delete </a>
         </td>
     </tr>
         {{/each}}
