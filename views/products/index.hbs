@@ -1,6 +1,6 @@
 <!--Geidy Ducuara Ruiz - 200419082-->
-<h1 >Classified Ads</h1>
-<a id="linkAdd"href="/products/add">Add a new Ad</a>
+<h1>Classified Ads</h1>
+<a id="linkAdd" href="/products/add">Add a new Ad</a>
 <p></p>
 <div class="table-responsive">
     <table class="table table-info table-hover">
@@ -14,17 +14,17 @@
         </tr>
 
         {{#each products}}
-    <tr>
-        <td>{{this.title}}</td>
-        <td>{{this.description}}</td>
-        <td>{{this.quantity}}</td>
-        <td>{{this.price}}</td>
-        <td>{{this.usedProduct}}</td>
-        <td>
-            <a style="color:blue;" href="/products/edit/{{this._id}}">Edit | </a>
-            <a href="/products/delete/{{ this._id }}" class="text-danger delete"> Delete </a>
-        </td>
-    </tr>
+        <tr>
+            <td>{{this.title}}</td>
+            <td>{{this.description}}</td>
+            <td>{{this.quantity}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.usedProduct}}</td>
+            <td>
+                <button><a style="color:blue;" href="/products/edit/{{this._id}}">Edit</a> </button>
+                <button><a href="/products/delete/{{ this._id }}" class="text-danger delete"> Delete </a></button>
+            </td>
+        </tr>
         {{/each}}
     </table>
 </div>

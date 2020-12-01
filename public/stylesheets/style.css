@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px 'Sriracha', cursive;
+  font: 18px 'Sriracha', cursive;
 }
 
 a {
@@ -20,4 +20,8 @@ h1 {
 
 ul {
   font-size: 1.5rem;
+}
+
+form {
+    text-align: center;
 }
