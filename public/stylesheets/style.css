@@ -1,8 +1,23 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Sriracha', cursive;
 }
 
 a {
   color: #00B7FF;
+}
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: #6b30c2;
+  font-family: 'Sriracha', cursive;
+} #linkAdd{
+  font-size: 2rem;
+  text-align: center;
+  color: deeppink;
+  font-family: 'Sriracha', cursive;
+}
+
+ul {
+  font-size: 1.5rem;
 }
