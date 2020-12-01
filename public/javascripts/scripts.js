@@ -5,6 +5,7 @@ $('.delete').on('click', () => {
     return confirm('Are you sure you want to delete this?')
 })
 
+
 ////compare passwords when register
 //function comparePasswords() {
 //    var pw1 = document.getElementById("password").value
@@ -21,4 +22,4 @@ $('.delete').on('click', () => {
 //        pwMsg.className = ""
 //        return true
 //    }
-}
+//}

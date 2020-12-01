@@ -52,7 +52,7 @@ router.post('/add', (req, res, next) => {
     })
 })
 
-//GET product/delete/ - colon in the path represents a URL parameter
+//GET products/delete/ - colon in the path represents a URL parameter
 router.get('/delete/:_id', (req, res, next) => {
     //store the selected id in a local variable
     var _id = req.params._id;
@@ -68,6 +68,9 @@ router.get('/delete/:_id', (req, res, next) => {
 
     })
 })
+
+
+
 //GET product/ edit/.. populate edit for with my existing product values
 
 router.get('/edit/:_id', (req, res, next) => {
