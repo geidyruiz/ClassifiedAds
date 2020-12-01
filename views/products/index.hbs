@@ -1,0 +1,31 @@
+<!--Geidy Ducuara Ruiz - 200419082-->
+<h2 class="font-weight-bold" align="center">Classified Ads</h2>
+<!--<h2>{{message1}}</h2>-->
+<a href="/products/add" style="color:black;">Add a new Ad</a>
+<p></p>
+<div class="table-responsive">
+    <table class="table table-info table-hover">
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Used Product</th>
+            <th>Actions</th>
+        </tr>
+
+        {{#each products}}
+    <tr>
+        <td>{{this.title}}</td>
+        <td>{{this.description}}</td>
+        <td>{{this.quantity}}</td>
+        <td>{{this.price}}</td>
+        <td>{{this.usedProduct}}</td>
+        <td>
+            <a style="color:blue;" href="/products/edit/{{this._id}}">Edit | </a>
+            <a href="/tasks/delete/{{ this._id }}" class="text-danger delete"> Delete </a>
+        </td>
+    </tr>
+        {{/each}}
+    </table>
+</div>

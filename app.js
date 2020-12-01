@@ -6,8 +6,29 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+//Add new Product controller
+var tasksRouter = require('./routes/products')
 
 var app = express();
+
+//DataBase Connection - try to connect an log a pass/fail result!
+
+const mongoose = require('mongoose')
+const globals = require('./config/globals')
+mongoose.connect(globals.db,
+
+    //mongoose.connect('mongodb+srv://GeidyRuiz:123@clustermanager.1eeyb.mongodb.net/products',
+
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }).then(
+        (res) => {
+            console.log('Connection to MongoDB')
+        }).catch(() => {
+            console.log('Connection Error')
+        })
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/products', tasksRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
