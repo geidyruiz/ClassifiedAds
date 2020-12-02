@@ -91,44 +91,44 @@ passport.use(new GoogleStrategy({
     }
 ))
 
-////Facebook Auth
-//const FacebookStrategy = require('passport-facebook').Strategy
+//Facebook Auth
+const FacebookStrategy = require('passport-facebook').Strategy
 
-//passport.use(new FacebookStrategy({
-//    clientID: globals.ids.facebook.clientID,
-//    clientSecret: globals.ids.facebook.clientSecret,
-//    callbackURL: globals.ids.facebook.callbackURL
-//},
-//    (token, tokenSecret, profile, done) => {
-//        //do we already have a user document in Mongo for this profile?
-//        User.findOne({ oauthId: profile.id }, (err, user) => {
-//            if (err) {
-//                console.log(err) //error
-//            }
-//            if (!err && user != null) {
-//                //facebook already exists in the MongoDB - just return the user object
-//                done(null, user)
-//            }
-//            else {
-//                //facebook user IS new, register them in MongoDB users collection!
-//                user = new User({
-//                    oauthId: profile.id,
-//                    username: profile.displayName,
-//                    oauthProvider: 'facebook',
-//                    created: Date.now()
-//                })
-//                user.save((err) => {
-//                    if (err) {
-//                        console.log(err)
-//                    }
-//                    else {
-//                        done(null, user)
-//                    }
-//                })
-//            }
-//        })
-//    }
-//))
+passport.use(new FacebookStrategy({
+    clientID: globals.ids.facebook.clientID,
+    clientSecret: globals.ids.facebook.clientSecret,
+    callbackURL: globals.ids.facebook.callbackURL
+},
+    (token, tokenSecret, profile, done) => {
+        //do we already have a user document in Mongo for this profile?
+        User.findOne({ oauthId: profile.id }, (err, user) => {
+            if (err) {
+                console.log(err) //error
+            }
+            if (!err && user != null) {
+                //facebook already exists in the MongoDB - just return the user object
+                done(null, user)
+            }
+            else {
+                //facebook user IS new, register them in MongoDB users collection!
+                user = new User({
+                    oauthId: profile.id,
+                    username: profile.displayName,
+                    oauthProvider: 'facebook',
+                    created: Date.now()
+                })
+                user.save((err) => {
+                    if (err) {
+                        console.log(err)
+                    }
+                    else {
+                        done(null, user)
+                    }
+                })
+            }
+        })
+    }
+))
 
 
 // view engine setup

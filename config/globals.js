@@ -12,12 +12,12 @@ module.exports =
             callbackURL: 'http://localhost:3000/google/callback'
            //callbackURL: 'https://classified-ads.herokuapp.com/google/callback'
         },
-        //'facebook': {
-        //    clientID: '284983652946610',
-        //    clientSecret: '3dff81e1932f00fe9d6cb0f5e22d89ca',
-        //    callbackURL: 'http://localhost:3000/facebook/callback'
-        //    //callbackURL: 'nodemon'
-        //},
+        'facebook': {
+            clientID: '142078980640330',
+            clientSecret: '95069443bb331770cc80f84de9532963',
+            callbackURL: 'http://localhost:3000/facebook/callback'
+            //callbackURL: 'nodemon'
+        }
 
         /* 'github': {
              clientID: '',

@@ -101,19 +101,18 @@ router.get('/google/callback', passport.authenticate('google', {
         res.redirect('/products')
     })
 
-//// GET / Facebook/
-//// Check if the User is already logged into/with Facebook, if not invoke then Facebook Signin
-//router.get('/facebook', passport.authenticate('facebook'),
-//    (req, res) => { }
-//)
+    // GET / Facebook /
+    // Check if the User is already logged into/with Facebook, if not invoke then Facebook Signin
+    router.get('/facebook', passport.authenticate('facebook'),
+        (req, res) => { }
+    )
 
-////Get / facebook/callback
-//router.get('/facebook/callback', passport.authenticate('facebook', {
-//    failureRedirect: '/login'
-//}),
-//    (req, res) => {
-//        res.redirect('/products')
-//    })
-
+//Get / facebook/callback
+router.get('/facebook/callback', passport.authenticate('facebook', {
+    failureRedirect: '/login'
+}),
+    (req, res) => {
+        res.redirect('/products')
+    })
 
 module.exports = router;
