@@ -18,13 +18,6 @@ module.exports =
             callbackURL: 'http://localhost:3000/facebook/callback'
             //callbackURL: 'nodemon'
         }
-
-        /* 'github': {
-             clientID: '',
-             clientSecret: '',
-             callbackURL: 'http://localhost:3000/github/callback'
-             //callbackURL: 'nodemon'
-         }*/
     }
 
 }
