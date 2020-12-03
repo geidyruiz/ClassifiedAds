@@ -41,6 +41,7 @@ router.get('/', isLoggedIn, (req, res, next) => {
     })
 })
 
+
 //GET product add view
 router.get('/add',isLoggedIn,(req, res, next) => {
     res.render('products/add',{

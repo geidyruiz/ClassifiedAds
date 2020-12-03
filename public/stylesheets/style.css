@@ -7,15 +7,36 @@ a {
   color: #00B7FF;
 }
 h1 {
-  font-size: 3rem;
-  text-align: center;
-  color: #6b30c2;
-  font-family: 'Sriracha', cursive;
-} #linkAdd{
+    padding: 30px;
+    font-size: 3rem;
+    text-align: center;
+    color: #6b30c2;
+    font-family: 'Sriracha', cursive;
+}
+h2 {
+
+    font-size: 1.5rem;
+    text-align: center;
+    color: #e62568;
+    font-family: 'Sriracha', cursive;
+}
+#linkAdd{
   font-size: 2rem;
   text-align: center;
   color: deeppink;
   font-family: 'Sriracha', cursive;
+}
+/*https://www.w3schools.com/howto/howto_js_filter_table.asp*/
+
+#search {
+    background-image: url('https://www.w3schools.com/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 15%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 2px solid #17A2B8; /* Add a turquesa border */
+    margin-bottom: 12px; /* Add some space below the input */
 }
 
 ul {
@@ -24,4 +45,13 @@ ul {
 
 form {
     text-align: center;
+}
+p {
+    text-align: center;
+   
+   }
+footer {
+    font: 16px 'Sriracha', cursive;
+    padding: 60px 20px 12px 40px;
+ 
 }

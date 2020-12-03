@@ -2,6 +2,9 @@
 var express = require('express');
 var router = express.Router();
 
+//Reference the product model
+const Product = require('../models/product')
+
 //ref for Auth
 const passport = require('passport')
 const User = require('../models/user')
@@ -9,19 +12,56 @@ const User = require('../models/user')
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('index', {
-        title: 'products',
+        title: 'Classified Ads',
         user: req.user
     });
 });
 
-/* GET ads page. */
-router.get('/ads', function (req, res, next) {
-    res.render('', {
-        title: 'Classified Ad ',
-        user: req.user
-    });
-});
 
+/* GET New Products view. */
+//use the product model to fetch a lists of product and pass these to view for display
+
+router.get('/newProducts', (req, res, next) => {
+
+    Product.find((err, products) => {
+        //if an error occurs, the error parameter will filled
+        if (err) {
+            console.log(err)
+            res.end(err)
+        }
+        //else, the product parameter will be filled with the query result
+        else {
+            res.render('newProducts',
+                {
+                    products: products,
+                    user: req.user
+                })
+        }
+    })
+})
+
+
+/* GET Used Products view. */
+//use the product model to fetch a lists of product and pass these to view for display
+
+router.get('/usedProducts', (req, res, next) => {
+
+    Product.find((err, products) => {
+        //if an error occurs, the error parameter will filled
+        if (err) {
+            console.log(err)
+            res.end(err)
+        }
+        //else, the product parameter will be filled with the query result
+        else {
+            res.render('usedProducts',
+                {
+                    products: products,
+                    user: req.user
+                })
+        }
+    })
+})
 ////GET /register
 //router.get('/register', (req, res, next) => {
 //    res.render('register')

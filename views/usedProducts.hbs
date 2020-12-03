@@ -1,8 +1,9 @@
 <!--Geidy Ducuara Ruiz - 200419082-->
-<h1>Classified Ads</h1>
-<a id="linkAdd" href="/products/add">Add a new Ad</a>
-<p></p>
+
+<h1>Used Products</h1>
+
 <input type="text" id="search" onkeyup="myFilter()" placeholder="Search for Title.. .">
+
 <div class="table-responsive">
     <table id="myTable" class="table table-info table-hover">
         <tr>
@@ -11,21 +12,21 @@
             <th>Price</th>
             <th>Quantity</th>
             <th>Used Product</th>
-            <th>Actions</th>
+
         </tr>
 
+
         {{#each products}}
+        {{#if usedProduct}}
         <tr>
             <td>{{this.title}}</td>
             <td>{{this.description}}</td>
             <td>{{this.quantity}}</td>
             <td>{{this.price}}</td>
             <td>{{this.usedProduct}}</td>
-            <td>
-                <button><a style="color:blue;" href="/products/edit/{{this._id}}">Edit</a> </button>
-                <button><a href="/products/delete/{{ this._id }}" class="text-danger delete"> Delete </a></button>
-            </td>
         </tr>
+        {{/if}}
         {{/each}}
+
     </table>
 </div>
