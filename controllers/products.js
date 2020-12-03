@@ -8,7 +8,7 @@ var router = express.Router();
 const Product = require('../models/product')
 
 //Use Passport to Check our Auth
-const passport = require('passport')
+const passport = require('passport');
 
 //Auth check function to be called for each route
 function isLoggedIn(req, res, next) {
@@ -89,7 +89,7 @@ router.get('/delete/:_id',isLoggedIn,(req, res, next) => {
 
 //GET product/ edit/.. populate edit for with my existing product values
 
-router.get('/edit/:_id',isLoggedIn, (req, res, next) => {
+router.get('/edit/:_id',isLoggedIn,(req, res, next) => {
     //store the selected id in a local variable
     var _id = req.params._id;
     //use this selected id to look up the matching document
@@ -108,13 +108,16 @@ router.get('/edit/:_id',isLoggedIn, (req, res, next) => {
         }
     })
 })
-//POST  product/ edit/;_id -> update selected document
-router.post('/edit/:_id',isLoggedIn,(req, res, next) => {
+//POST  product/ edit/:_id -> update selected document
+router.post('/edit/:_id', isLoggedIn,(req, res, next) => {
     var _id = req.params._id
     //parse checkbox to bool
-    var usedProduct = false
+    let usedProduct = false
     if (req.body.usedProduct == "on")
+    {
         usedProduct = true
+    }
+       
     console.log('Used Product: ' + req.body.usedProduct)
     //instatiate a product Object with the new values from the submission
     var product = new Product({

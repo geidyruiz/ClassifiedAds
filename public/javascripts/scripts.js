@@ -24,7 +24,7 @@ function comparePasswords() {
     }
 }
 
-
+//function to search in the column title in the tables
 function myFilter() {
     // Declare variables
     let input, filter, table, tr, td, i, txtValue;
@@ -47,3 +47,50 @@ function myFilter() {
         }
     }
 }
+
+//Geolocation
+//returns a Geolocation object that gives Web content access to the location of the device.
+//navigator.geolocation.getCurrentPosition(showPosition);
+let locationBtn = document.getElementById("mylocation");
+let para = document.getElementById("location");
+let button = document.querySelector("button");
+let mapLink = document.getElementById("map-link");
+
+mapLink.href = "";
+mapLink.textContent = "";
+
+
+function getLocation() {
+
+    //success callback
+    if (!navigator.geolocation) {
+        para.textContent = "Geolocation is not supported by your browser";
+    }
+    /* success
+             A callback function that takes a GeolocationPosition object as its sole input parameter.
+             error Optional
+             An optional callback function that takes a GeolocationPositionError object as its sole input parameter.
+             */
+    else {
+        para.textContent = "Locating…";
+        
+         /*The Geolocation.getCurrentPosition() method is used to get the current position of the device.*/
+        navigator.geolocation.getCurrentPosition(showPosition, errorMsg);
+    }
+}
+
+function showPosition(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    para.textContent = "";
+    mapLink.textContent = "Check out the map!";
+    mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+    mapLink.textContent = "View The Map!";
+}
+
+function errorMsg() {
+    para.textContent = "Sorry, something went wrong!";
+}
+
+button.onclick = getLocation;
+

@@ -62,10 +62,7 @@ router.get('/usedProducts', (req, res, next) => {
         }
     })
 })
-////GET /register
-//router.get('/register', (req, res, next) => {
-//    res.render('register')
-//})
+
 
 router.get('/register', (req, res, next) => {
     //Check for Invalid password message and pass to the view to display
